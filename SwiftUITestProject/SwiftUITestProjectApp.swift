@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct SwiftUITestProjectApp: App {
+    @StateObject var messageManager = MessageManager()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
+        
+        WindowGroup(for: Message.ID.self) { $mesageId in
+            MessageDetail(messageId: mesageId)
+                .environmentObject(messageManager)
+        }
     }
 }
+

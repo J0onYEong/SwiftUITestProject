@@ -14,6 +14,8 @@
 		9B864F5D2A6A7B0B002E7C31 /* SwiftUITestProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B864F5C2A6A7B0B002E7C31 /* SwiftUITestProjectTests.swift */; };
 		9B864F672A6A7B0B002E7C31 /* SwiftUITestProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B864F662A6A7B0B002E7C31 /* SwiftUITestProjectUITests.swift */; };
 		9B864F692A6A7B0B002E7C31 /* SwiftUITestProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B864F682A6A7B0B002E7C31 /* SwiftUITestProjectUITestsLaunchTests.swift */; };
+		9B864F792A6AA15F002E7C31 /* MessageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B864F782A6AA15F002E7C31 /* MessageDetail.swift */; };
+		9B864F7B2A6AA19E002E7C31 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B864F7A2A6AA19D002E7C31 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		9B864F622A6A7B0B002E7C31 /* SwiftUITestProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUITestProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B864F662A6A7B0B002E7C31 /* SwiftUITestProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITestProjectUITests.swift; sourceTree = "<group>"; };
 		9B864F682A6A7B0B002E7C31 /* SwiftUITestProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITestProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9B864F782A6AA15F002E7C31 /* MessageDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetail.swift; sourceTree = "<group>"; };
+		9B864F7A2A6AA19D002E7C31 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 		9B864F4A2A6A7B09002E7C31 /* SwiftUITestProject */ = {
 			isa = PBXGroup;
 			children = (
+				9B864F752A6AA13C002E7C31 /* WindowPractice */,
 				9B864F4B2A6A7B09002E7C31 /* SwiftUITestProjectApp.swift */,
 				9B864F4D2A6A7B09002E7C31 /* ContentView.swift */,
 				9B864F4F2A6A7B0A002E7C31 /* Assets.xcassets */,
@@ -125,6 +130,15 @@
 				9B864F682A6A7B0B002E7C31 /* SwiftUITestProjectUITestsLaunchTests.swift */,
 			);
 			path = SwiftUITestProjectUITests;
+			sourceTree = "<group>";
+		};
+		9B864F752A6AA13C002E7C31 /* WindowPractice */ = {
+			isa = PBXGroup;
+			children = (
+				9B864F782A6AA15F002E7C31 /* MessageDetail.swift */,
+				9B864F7A2A6AA19D002E7C31 /* Message.swift */,
+			);
+			path = WindowPractice;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +272,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B864F4E2A6A7B09002E7C31 /* ContentView.swift in Sources */,
+				9B864F7B2A6AA19E002E7C31 /* Message.swift in Sources */,
+				9B864F792A6AA15F002E7C31 /* MessageDetail.swift in Sources */,
 				9B864F4C2A6A7B09002E7C31 /* SwiftUITestProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

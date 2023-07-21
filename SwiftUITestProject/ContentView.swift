@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.openWindow) var openWindow
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Button("window message 1") {
+                openWindow(value: Message.ID(string: "1"))
+            }
+            
+            Button("window message 2") {
+                openWindow(value: Message.ID(string: "2"))
+            }
         }
         .padding()
     }
