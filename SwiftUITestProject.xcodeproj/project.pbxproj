@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9B09B3EE2A6E995C002B4DA3 /* ShowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09B3ED2A6E995C002B4DA3 /* ShowingView.swift */; };
 		9B09B3F22A6E998C002B4DA3 /* TestCustomShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09B3F12A6E998C002B4DA3 /* TestCustomShape.swift */; };
+		9B09B3F52A6EBBEB002B4DA3 /* IdModifierTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09B3F42A6EBBEB002B4DA3 /* IdModifierTest.swift */; };
 		9B864F4C2A6A7B09002E7C31 /* SwiftUITestProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B864F4B2A6A7B09002E7C31 /* SwiftUITestProjectApp.swift */; };
 		9B864F4E2A6A7B09002E7C31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B864F4D2A6A7B09002E7C31 /* ContentView.swift */; };
 		9B864F502A6A7B0A002E7C31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B864F4F2A6A7B0A002E7C31 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 		9B864F692A6A7B0B002E7C31 /* SwiftUITestProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B864F682A6A7B0B002E7C31 /* SwiftUITestProjectUITestsLaunchTests.swift */; };
 		9B864F792A6AA15F002E7C31 /* MessageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B864F782A6AA15F002E7C31 /* MessageDetail.swift */; };
 		9B864F7B2A6AA19E002E7C31 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B864F7A2A6AA19D002E7C31 /* Message.swift */; };
+		9B88A3A62A6F7D2B0061A182 /* ClippedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88A3A52A6F7D2B0061A182 /* ClippedTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,7 @@
 /* Begin PBXFileReference section */
 		9B09B3ED2A6E995C002B4DA3 /* ShowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingView.swift; sourceTree = "<group>"; };
 		9B09B3F12A6E998C002B4DA3 /* TestCustomShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCustomShape.swift; sourceTree = "<group>"; };
+		9B09B3F42A6EBBEB002B4DA3 /* IdModifierTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdModifierTest.swift; sourceTree = "<group>"; };
 		9B864F482A6A7B09002E7C31 /* SwiftUITestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUITestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B864F4B2A6A7B09002E7C31 /* SwiftUITestProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITestProjectApp.swift; sourceTree = "<group>"; };
 		9B864F4D2A6A7B09002E7C31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		9B864F682A6A7B0B002E7C31 /* SwiftUITestProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITestProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9B864F782A6AA15F002E7C31 /* MessageDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetail.swift; sourceTree = "<group>"; };
 		9B864F7A2A6AA19D002E7C31 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		9B88A3A52A6F7D2B0061A182 /* ClippedTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClippedTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,15 @@
 			path = Animatable;
 			sourceTree = "<group>";
 		};
+		9B09B3F32A6EBB33002B4DA3 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				9B09B3F42A6EBBEB002B4DA3 /* IdModifierTest.swift */,
+				9B88A3A52A6F7D2B0061A182 /* ClippedTest.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
 		9B864F3F2A6A7B09002E7C31 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +124,7 @@
 		9B864F4A2A6A7B09002E7C31 /* SwiftUITestProject */ = {
 			isa = PBXGroup;
 			children = (
+				9B09B3F32A6EBB33002B4DA3 /* Modifier */,
 				9B09B3EB2A6E993F002B4DA3 /* Animatable */,
 				9B864F752A6AA13C002E7C31 /* WindowPractice */,
 				9B864F4B2A6A7B09002E7C31 /* SwiftUITestProjectApp.swift */,
@@ -290,7 +304,9 @@
 				9B864F7B2A6AA19E002E7C31 /* Message.swift in Sources */,
 				9B864F792A6AA15F002E7C31 /* MessageDetail.swift in Sources */,
 				9B09B3F22A6E998C002B4DA3 /* TestCustomShape.swift in Sources */,
+				9B88A3A62A6F7D2B0061A182 /* ClippedTest.swift in Sources */,
 				9B864F4C2A6A7B09002E7C31 /* SwiftUITestProjectApp.swift in Sources */,
+				9B09B3F52A6EBBEB002B4DA3 /* IdModifierTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

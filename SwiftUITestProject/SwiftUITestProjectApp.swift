@@ -7,19 +7,21 @@
 
 import SwiftUI
 
+
 @main
 struct SwiftUITestProjectApp: App {
     @StateObject var messageManager = MessageManager()
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            IdModifierTest()
         }
         
-        WindowGroup(for: Message.ID.self) { $mesageId in
-            MessageDetail(messageId: mesageId)
-                .environmentObject(messageManager)
-        }
+//        WindowGroup(for: Message.ID.self) { $mesageId in
+//            MessageDetail(messageId: mesageId)
+//                .environmentObject(messageManager)
+//        }
     }
 }
 
