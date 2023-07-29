@@ -10,6 +10,7 @@
 		9B09B3EE2A6E995C002B4DA3 /* ShowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09B3ED2A6E995C002B4DA3 /* ShowingView.swift */; };
 		9B09B3F22A6E998C002B4DA3 /* TestCustomShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09B3F12A6E998C002B4DA3 /* TestCustomShape.swift */; };
 		9B09B3F52A6EBBEB002B4DA3 /* IdModifierTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09B3F42A6EBBEB002B4DA3 /* IdModifierTest.swift */; };
+		9B30AA5E2A75230A00A8A1FD /* MaskTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B30AA5D2A75230A00A8A1FD /* MaskTest.swift */; };
 		9B864F4C2A6A7B09002E7C31 /* SwiftUITestProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B864F4B2A6A7B09002E7C31 /* SwiftUITestProjectApp.swift */; };
 		9B864F4E2A6A7B09002E7C31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B864F4D2A6A7B09002E7C31 /* ContentView.swift */; };
 		9B864F502A6A7B0A002E7C31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B864F4F2A6A7B0A002E7C31 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		9B09B3ED2A6E995C002B4DA3 /* ShowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingView.swift; sourceTree = "<group>"; };
 		9B09B3F12A6E998C002B4DA3 /* TestCustomShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCustomShape.swift; sourceTree = "<group>"; };
 		9B09B3F42A6EBBEB002B4DA3 /* IdModifierTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdModifierTest.swift; sourceTree = "<group>"; };
+		9B30AA5D2A75230A00A8A1FD /* MaskTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskTest.swift; sourceTree = "<group>"; };
 		9B864F482A6A7B09002E7C31 /* SwiftUITestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUITestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B864F4B2A6A7B09002E7C31 /* SwiftUITestProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITestProjectApp.swift; sourceTree = "<group>"; };
 		9B864F4D2A6A7B09002E7C31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				9B09B3F42A6EBBEB002B4DA3 /* IdModifierTest.swift */,
 				9B88A3A52A6F7D2B0061A182 /* ClippedTest.swift */,
+				9B30AA5D2A75230A00A8A1FD /* MaskTest.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B30AA5E2A75230A00A8A1FD /* MaskTest.swift in Sources */,
 				9B09B3EE2A6E995C002B4DA3 /* ShowingView.swift in Sources */,
 				9B864F4E2A6A7B09002E7C31 /* ContentView.swift in Sources */,
 				9B864F7B2A6AA19E002E7C31 /* Message.swift in Sources */,
