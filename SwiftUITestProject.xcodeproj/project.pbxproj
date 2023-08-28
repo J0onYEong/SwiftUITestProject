@@ -11,6 +11,9 @@
 		9B09B3F22A6E998C002B4DA3 /* TestCustomShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09B3F12A6E998C002B4DA3 /* TestCustomShape.swift */; };
 		9B09B3F52A6EBBEB002B4DA3 /* IdModifierTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09B3F42A6EBBEB002B4DA3 /* IdModifierTest.swift */; };
 		9B30AA5E2A75230A00A8A1FD /* MaskTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B30AA5D2A75230A00A8A1FD /* MaskTest.swift */; };
+		9B6357342A7943FB00098F98 /* monospaced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6357332A7943FB00098F98 /* monospaced.swift */; };
+		9B7144AE2A9CD25700D7B21D /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7144AD2A9CD25700D7B21D /* CustomTabView.swift */; };
+		9B78F8BE2A8D164900207C98 /* HierarchyUpdateTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78F8BD2A8D164900207C98 /* HierarchyUpdateTestView.swift */; };
 		9B864F4C2A6A7B09002E7C31 /* SwiftUITestProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B864F4B2A6A7B09002E7C31 /* SwiftUITestProjectApp.swift */; };
 		9B864F4E2A6A7B09002E7C31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B864F4D2A6A7B09002E7C31 /* ContentView.swift */; };
 		9B864F502A6A7B0A002E7C31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B864F4F2A6A7B0A002E7C31 /* Assets.xcassets */; };
@@ -45,6 +48,9 @@
 		9B09B3F12A6E998C002B4DA3 /* TestCustomShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCustomShape.swift; sourceTree = "<group>"; };
 		9B09B3F42A6EBBEB002B4DA3 /* IdModifierTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdModifierTest.swift; sourceTree = "<group>"; };
 		9B30AA5D2A75230A00A8A1FD /* MaskTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskTest.swift; sourceTree = "<group>"; };
+		9B6357332A7943FB00098F98 /* monospaced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = monospaced.swift; sourceTree = "<group>"; };
+		9B7144AD2A9CD25700D7B21D /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		9B78F8BD2A8D164900207C98 /* HierarchyUpdateTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchyUpdateTestView.swift; sourceTree = "<group>"; };
 		9B864F482A6A7B09002E7C31 /* SwiftUITestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUITestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B864F4B2A6A7B09002E7C31 /* SwiftUITestProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITestProjectApp.swift; sourceTree = "<group>"; };
 		9B864F4D2A6A7B09002E7C31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,8 +106,25 @@
 				9B09B3F42A6EBBEB002B4DA3 /* IdModifierTest.swift */,
 				9B88A3A52A6F7D2B0061A182 /* ClippedTest.swift */,
 				9B30AA5D2A75230A00A8A1FD /* MaskTest.swift */,
+				9B6357332A7943FB00098F98 /* monospaced.swift */,
 			);
 			path = Modifier;
+			sourceTree = "<group>";
+		};
+		9B7144AC2A9CBB7400D7B21D /* CustomTabView */ = {
+			isa = PBXGroup;
+			children = (
+				9B7144AD2A9CD25700D7B21D /* CustomTabView.swift */,
+			);
+			path = CustomTabView;
+			sourceTree = "<group>";
+		};
+		9B78F8BC2A8D162000207C98 /* ViewUpdateTest */ = {
+			isa = PBXGroup;
+			children = (
+				9B78F8BD2A8D164900207C98 /* HierarchyUpdateTestView.swift */,
+			);
+			path = ViewUpdateTest;
 			sourceTree = "<group>";
 		};
 		9B864F3F2A6A7B09002E7C31 = {
@@ -127,6 +150,8 @@
 		9B864F4A2A6A7B09002E7C31 /* SwiftUITestProject */ = {
 			isa = PBXGroup;
 			children = (
+				9B7144AC2A9CBB7400D7B21D /* CustomTabView */,
+				9B78F8BC2A8D162000207C98 /* ViewUpdateTest */,
 				9B09B3F32A6EBB33002B4DA3 /* Modifier */,
 				9B09B3EB2A6E993F002B4DA3 /* Animatable */,
 				9B864F752A6AA13C002E7C31 /* WindowPractice */,
@@ -305,10 +330,13 @@
 				9B30AA5E2A75230A00A8A1FD /* MaskTest.swift in Sources */,
 				9B09B3EE2A6E995C002B4DA3 /* ShowingView.swift in Sources */,
 				9B864F4E2A6A7B09002E7C31 /* ContentView.swift in Sources */,
+				9B7144AE2A9CD25700D7B21D /* CustomTabView.swift in Sources */,
 				9B864F7B2A6AA19E002E7C31 /* Message.swift in Sources */,
 				9B864F792A6AA15F002E7C31 /* MessageDetail.swift in Sources */,
 				9B09B3F22A6E998C002B4DA3 /* TestCustomShape.swift in Sources */,
+				9B6357342A7943FB00098F98 /* monospaced.swift in Sources */,
 				9B88A3A62A6F7D2B0061A182 /* ClippedTest.swift in Sources */,
+				9B78F8BE2A8D164900207C98 /* HierarchyUpdateTestView.swift in Sources */,
 				9B864F4C2A6A7B09002E7C31 /* SwiftUITestProjectApp.swift in Sources */,
 				9B09B3F52A6EBBEB002B4DA3 /* IdModifierTest.swift in Sources */,
 			);

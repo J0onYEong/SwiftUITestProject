@@ -37,8 +37,48 @@ struct QuaterCicle: View {
     }
 }
 
+
+struct TransitionWithClippedTest: View {
+    @State private var isShowing = false
+    
+    var body: some View {
+        ZStack {
+            VStack {
+                Spacer()
+                ZStack {
+                    if isShowing {
+                        ZStack {
+                            LinearGradient(colors: [.red, .blue], startPoint: .leading, endPoint: .trailing)
+                            Text("Hello world")
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: 200, height: 200)
+                        .transition(.move(edge: .bottom))
+                    }
+                }
+                .frame(width: 200)
+                .clipShape(Rectangle())
+            }
+            
+            
+            
+            VStack {
+                Spacer()
+                Spacer()
+                Button("Change State") {
+                    withAnimation {
+                        isShowing.toggle()
+                    }
+                }
+                Spacer()
+            }
+        }
+    }
+}
+
+
 struct ClippedTest_Previews: PreviewProvider {
     static var previews: some View {
-        QuaterCicle()
+        TransitionWithClippedTest()
     }
 }
