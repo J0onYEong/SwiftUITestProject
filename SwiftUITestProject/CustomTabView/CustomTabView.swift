@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-protocol TabSample: Hashable & Identifiable {
+protocol CustomTabViewTabSample: Hashable & Identifiable {
     var image: Image { get }
     var title: String { get }
 }
 
 
-struct CustomTabView<Sample>: View where Sample: TabSample {
+struct CustomTabView<Sample>: View where Sample: CustomTabViewTabSample {
     
     @Binding var selectedTabSampleKey: Sample
     
@@ -66,7 +66,7 @@ struct CustomTabView<Sample>: View where Sample: TabSample {
 
 //------------------------------------------------------
 
-enum TestScreenTabViewSample: TabSample {
+enum TestScreenTabViewSample: CustomTabViewTabSample {
     case flower, house, bulb
     
     var id: UUID { UUID() }
@@ -94,7 +94,7 @@ enum TestScreenTabViewSample: TabSample {
     }
 }
 
-struct TestView: View {
+fileprivate struct TestView: View {
     
     @State private var selectedTabSample: TestScreenTabViewSample = .flower
     
