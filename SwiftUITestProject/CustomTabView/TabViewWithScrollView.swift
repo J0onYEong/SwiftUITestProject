@@ -11,7 +11,7 @@ struct TabViewWithScrollView<Sample>: View where Sample: TabViewWithScrollTabSam
     @Binding var selectedTabSampleKey: Sample
     
     
-    @State private var underBarOffsetXValue: CGFloat = 0.0
+    @State private var underBarOffsetX: CGFloat = 0.0
     
     var tabs: [Sample : AnyView]
     
@@ -20,9 +20,13 @@ struct TabViewWithScrollView<Sample>: View where Sample: TabViewWithScrollTabSam
     private let tabBarItemCount = 4
     private var tabBarItemFrameWidth: CGFloat { UIScreen.main.bounds.width / CGFloat(tabBarItemCount) }
     
-    private var offsetXStartValue: CGFloat {
+    private var offsetXStart: CGFloat {
         CGFloat(countOfTabs % 2 == 0 ? countOfTabs/2 : Int(countOfTabs/2)) * (-tabBarItemFrameWidth)
     }
+    
+    //----------------View----------------
+    @State private var viewOffsetX: CGFloat = 0.0
+    
     
     var body: some View {
         VStack(spacing: 0) {
@@ -58,15 +62,17 @@ struct TabViewWithScrollView<Sample>: View where Sample: TabViewWithScrollTabSam
                             }
                             GeometryReader { geoOverUnderBar in
                                 Rectangle()
-                                    .onChange(of: underBarOffsetXValue) { newOffsetXValue in
+                                    .onChange(of: underBarOffsetX) { newOffsetXValue in
                                         let scrollViewSpaceCoordinate = geoOverUnderBar.frame(in: .named("ScrollViewCoordinate"))
-                                        if scrollViewSpaceCoordinate.minX > UIScreen.main.bounds.width {
-                                            proxy.scrollTo(selectedTabSampleKey, anchor: .leading)
+                                        if scrollViewSpaceCoordinate.midX > UIScreen.main.bounds.width || scrollViewSpaceCoordinate.midX < 0  {
+                                            withAnimation {
+                                                proxy.scrollTo(selectedTabSampleKey, anchor: .trailing)
+                                            }
                                         }
                                     }
                             }
                             .frame(width: tabBarItemFrameWidth, height: 3)
-                            .offset(x: underBarOffsetXValue, y: 0)
+                            .offset(x: underBarOffsetX, y: 0)
                         }
                     }
                     .scrollIndicators(.hidden)
@@ -77,25 +83,77 @@ struct TabViewWithScrollView<Sample>: View where Sample: TabViewWithScrollTabSam
             .onChange(of: selectedTabSampleKey) { sampleKey in
                 if let index = tabs.keys.sorted().firstIndex(of: sampleKey) {
                     withAnimation(.easeOut(duration: 0.25)) {
-                        underBarOffsetXValue = offsetXStartValue + tabBarItemFrameWidth * CGFloat(index)
+                        underBarOffsetX = offsetXStart + tabBarItemFrameWidth * CGFloat(index)
                     }
                 }
             }
             
             .onAppear {
-                underBarOffsetXValue = offsetXStartValue
+                underBarOffsetX = offsetXStart
             }
             
             //----------------------뷰----------------------
             
-            GeometryReader { geo in
-                tabs[selectedTabSampleKey]?
-                    .frame(width: geo.size.width, height: geo.size.height)
-                    .position(x: geo.size.width/2, y: geo.size.height/2)
+            ZStack {
+                
+                if let index = tabs.keys.sorted().firstIndex(of: selectedTabSampleKey), index > 0 {
+                    if let previousVew = tabs[tabs.keys.sorted()[index-1]] {
+                        previousVew
+                            .animation(.none)
+                            .offset(x: -UIScreen.main.bounds.width + viewOffsetX, y: 0)
+                    }
+                }
+                
+                
+                if let centerView = tabs[selectedTabSampleKey] {
+                    centerView
+                        .animation(.none)
+                        .offset(x:viewOffsetX, y: 0)
+                        .gesture(
+                            DragGesture()
+                                .onChanged(onDragGestureChange(value:))
+                                .onEnded(onDragGestureEnded(value:))
+                        )
+                }
+                
+                if let index = tabs.keys.sorted().firstIndex(of: selectedTabSampleKey), index < countOfTabs-1 {
+                    if let previousVew = tabs[tabs.keys.sorted()[index+1]] {
+                        previousVew
+                            .animation(.none)
+                            .offset(x: +UIScreen.main.bounds.width + viewOffsetX, y: 0)
+                    }
+                }
+                    
             }
             
-            
             Spacer(minLength: 0)
+        }
+    }
+    
+    private func onDragGestureChange(value: DragGesture.Value) {
+        //첫화면인 경우 오른쪽 슬라이드 막기
+        if (tabs.keys.sorted().first != selectedTabSampleKey || value.translation.width < 0) && (tabs.keys.sorted().last != selectedTabSampleKey || value.translation.width > 0) {
+            viewOffsetX = value.translation.width
+        }
+    
+    }
+    
+    private func onDragGestureEnded(value: DragGesture.Value) {
+        //드래그를 절반이상 오른쪽으로 한경우
+        if viewOffsetX > UIScreen.main.bounds.width * 0.5 {
+            if let index = tabs.keys.sorted().firstIndex(of: selectedTabSampleKey), index > 0 {
+                selectedTabSampleKey = tabs.keys.sorted()[index-1]
+            }
+        }
+        
+        if viewOffsetX < -UIScreen.main.bounds.width * 0.5 {
+            if let index = tabs.keys.sorted().firstIndex(of: selectedTabSampleKey), index < countOfTabs-1 {
+                selectedTabSampleKey = tabs.keys.sorted()[index+1]
+            }
+        }
+        
+        withAnimation {
+            viewOffsetX = 0.0
         }
     }
 }
