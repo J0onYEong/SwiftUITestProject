@@ -99,7 +99,6 @@ struct TabViewWithScrollView<Sample>: View where Sample: TabViewWithScrollTabSam
                 if let index = tabs.keys.sorted().firstIndex(of: selectedTabSampleKey), index > 0 {
                     if let previousVew = tabs[tabs.keys.sorted()[index-1]] {
                         previousVew
-                            .animation(.none)
                             .offset(x: -UIScreen.main.bounds.width + viewOffsetX, y: 0)
                     }
                 }
@@ -107,7 +106,6 @@ struct TabViewWithScrollView<Sample>: View where Sample: TabViewWithScrollTabSam
                 
                 if let centerView = tabs[selectedTabSampleKey] {
                     centerView
-                        .animation(.none)
                         .offset(x:viewOffsetX, y: 0)
                         .gesture(
                             DragGesture()
@@ -119,7 +117,6 @@ struct TabViewWithScrollView<Sample>: View where Sample: TabViewWithScrollTabSam
                 if let index = tabs.keys.sorted().firstIndex(of: selectedTabSampleKey), index < countOfTabs-1 {
                     if let previousVew = tabs[tabs.keys.sorted()[index+1]] {
                         previousVew
-                            .animation(.none)
                             .offset(x: +UIScreen.main.bounds.width + viewOffsetX, y: 0)
                     }
                 }
@@ -133,30 +130,30 @@ struct TabViewWithScrollView<Sample>: View where Sample: TabViewWithScrollTabSam
     private func onDragGestureChange(value: DragGesture.Value) {
         //첫화면인 경우 오른쪽 슬라이드 막기
         if (tabs.keys.sorted().first != selectedTabSampleKey || value.translation.width < 0) && (tabs.keys.sorted().last != selectedTabSampleKey || value.translation.width > 0) {
-            viewOffsetX = value.translation.width
+            viewOffsetX = value.translation.width * 0.5
         }
     
     }
     
     private func onDragGestureEnded(value: DragGesture.Value) {
         //드래그를 절반이상 오른쪽으로 한경우
-        if viewOffsetX > UIScreen.main.bounds.width * 0.5 {
+        if viewOffsetX > UIScreen.main.bounds.width * 0.25 {
             if let index = tabs.keys.sorted().firstIndex(of: selectedTabSampleKey), index > 0 {
                 selectedTabSampleKey = tabs.keys.sorted()[index-1]
             }
         }
         
-        if viewOffsetX < -UIScreen.main.bounds.width * 0.5 {
+        if viewOffsetX < -UIScreen.main.bounds.width * 0.25 {
             if let index = tabs.keys.sorted().firstIndex(of: selectedTabSampleKey), index < countOfTabs-1 {
                 selectedTabSampleKey = tabs.keys.sorted()[index+1]
             }
         }
         
-        withAnimation {
-            viewOffsetX = 0.0
-        }
+        //중앙에 위치하도록
+        viewOffsetX = 0.0
     }
 }
+
 
 //------------------------------------------------------
 
